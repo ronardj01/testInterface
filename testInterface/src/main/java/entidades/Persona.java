@@ -28,7 +28,7 @@ public class Persona {
 
     public Persona(String nombre, char sexo, int edad) {
         this.nombre = nombre;
-        this.sexo = sexo;
+        this.sexo = this.comprobarSexo(sexo);
         this.edad = edad;
         this.peso = 0;
         this.altura = 0;
@@ -37,7 +37,7 @@ public class Persona {
     public Persona(String nombre, String DNI, char sexo, int edad, float peso, float altura) {
         this.nombre = nombre;
         this.DNI = DNI;
-        this.sexo = sexo;
+        this.sexo = this.comprobarSexo(sexo);
         this.edad = edad;
         this.peso = peso;
         this.altura = altura;
@@ -120,6 +120,14 @@ public class Persona {
             resultado = true;
         }
 
+        return resultado;
+    }
+    
+    private char comprobarSexo(char sexo) {
+        char resultado = Persona.SEXO;
+        if(sexo == 'H' || sexo == 'M') {
+            resultado = sexo;
+        }
         return resultado;
     }
 }
