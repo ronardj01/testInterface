@@ -112,4 +112,14 @@ public class Persona {
         }
         return resultado;
     }
+
+    public boolean esMayorDeEdad() {
+        boolean resultado = false;
+
+        if (this.edad > 17) {
+            resultado = true;
+        }
+
+        return resultado;
+    }
 }
