@@ -99,4 +99,17 @@ public class Persona {
         return "Persona{" + "nombre=" + nombre + ", DNI=" + DNI + ", sexo=" + sexo + ", edad=" + edad + ", peso=" + peso + ", altura=" + altura + '}';
     }
 
+    public int calcularIMC() {
+        int resultado;
+        double imc = this.peso / Math.sqrt(this.altura);
+
+        if (imc < 18.5) {
+            resultado = -1;
+        } else if (imc > 24.9) {
+            resultado = 1;
+        } else {
+            resultado = 0;
+        }
+        return resultado;
+    }
 }
