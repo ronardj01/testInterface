@@ -101,7 +101,7 @@ public class Persona {
 
     public int calcularIMC() {
         int resultado;
-        double imc = this.peso / Math.sqrt(this.altura);
+        double imc = this.peso / Math.pow(this.altura,2);
 
         if (imc < 18.5) {
             resultado = -1;
